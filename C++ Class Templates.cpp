@@ -7,25 +7,21 @@
 using namespace std;
 
 /*Write the class AddElements here*/
-template <class T>
-class AddElements {
-    T element;
-  public:
-    AddElements (T arg) {element=arg;}
-    T add (T x) {return x+element;}
+template <class T> class AddElements {
+    public:
+        T element;
+        AddElements(T i) {element = i;}
+        T add(T i) {return element+i;}
+    private:
+        
 };
-
-// class template specialization:
-template <>
-class AddElements <string> {
-    string element;
-  public:
-    AddElements (string arg) {element=arg;}
-    string concatenate (string arg)
-    {
-      string s = element+arg;
-      return s;
-    }
+template <> class AddElements <string> {
+    public:
+        string element;
+        AddElements(string i) {element = i;}
+        string concatenate(string element2) {return element+element2;}
+    private:
+        
 };
 int main () {
   int n,i;
@@ -54,3 +50,4 @@ int main () {
   }
   return 0;
 }
+
